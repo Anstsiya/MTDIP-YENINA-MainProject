@@ -8,23 +8,23 @@ function checkSignByDate() {
     var zodiacs = zodiacList();
     $('#text').text('Your result is...');
 
-    var traitsList = traits();
+    var traitsList = characteristics();
 
     _.each(zodiacs, (item) => {
         if (item.firstDate.month === month) {
             if(day >= item.firstDate.date) {
-                includeToHtml(item, traitsList);
+                addToHtml(item, traitsList);
             }
         } else if (item.lastDate.month === month) {
             if(day <= item.lastDate.date) {
-                includeToHtml(item, traitsList);
+                addToHtml(item, traitsList);
             }
         }
 
     })
 }
 
-function includeToHtml (item, traitsList) {
+function addToHtml (item, traitsList) {
     $('#img').replaceWith('<img id="img" src="images/' +
     _.toLower(item.name) + '.jpg"' + 'alt="sign" class="img-circle" height="200" width="200">');
     $('#name').replaceWith('<h2 id="name">'+ item.name + '</h2>');
