@@ -15,7 +15,7 @@ function zodiacList () {
     ]
 };
 
-function traits () {
+function characteristics () {
     return {
         AQUARIUS: { date: "January 20 - February 18", info: {
             strengths : "Progressive, original, independent, humanitarian", 
