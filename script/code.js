@@ -1,5 +1,5 @@
 
-function checkSign() {
+function checkSignByDate() {
     var data = $("#dateInput").val();
     var date = new Date(data);
     var day = date.getDate(date);
