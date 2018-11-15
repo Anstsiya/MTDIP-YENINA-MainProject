@@ -1,5 +1,5 @@
 
-function checkSign() {
+function findYourSign() {
     var data = $("#dateInput").val();
     var date = new Date(data);
     var day = date.getDate(date);
@@ -13,22 +13,22 @@ function checkSign() {
     _.each(zodiacs, (item) => {
         if (item.firstDate.month === month) {
             if(day >= item.firstDate.date) {
-                addToHtml(item, traitsList);
+                addLinesToHtml(item, traitsList);
             }
         } else if (item.lastDate.month === month) {
             if(day <= item.lastDate.date) {
-                addToHtml(item, traitsList);
+                addLinesToHtml(item, traitsList);
             }
         }
 
     })
 }
 
-function addToHtml (item, traitsList) {
+function addLinesToHtml (item, traitsList) {
     $('#img').replaceWith('<img id="img" src="images/' +
     _.toLower(item.name) + '.jpg"' + 'alt="sign" class="img-circle" height="200" width="200">');
     $('#name').replaceWith('<h2 id="name">'+ item.name + '</h2>');
-    $('#dateLable').text("Date");
+    $('#dateLable').text("Date period");
     $('#date').replaceWith('<p id="date">'+traitsList[item.name].date +'</p>');
     $('#strengthsLable').text("Strengths");
     $('#strengths').replaceWith('<p id="strengths">'+traitsList[item.name].info.strengths +'</p>');
