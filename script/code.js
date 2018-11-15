@@ -1,12 +1,9 @@
 
 function checkSign() {
     var data = $("#dateInput").val();
-    //alert(data);
     var date = new Date(data);
-   // alert(date);
     var day = date.getDate(date);
     var month = date.getMonth(date) + 1;
-   // alert(day+"----"+month);
 
     var zodiacs = zodiacList();
     $('#text').text('Your result is...');
